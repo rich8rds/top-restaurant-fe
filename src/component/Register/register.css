@@ -1,0 +1,242 @@
+
+:root {
+    --mid-font-color: rgb(66, 65, 65);
+    --logo-blue-color: rgb(102, 102, 244);
+    --disabled-color: rgb(242, 241, 238);
+
+    --border-color: #f5f5f5;
+    --light-font-color:#2f8ded;
+    --mid-font-color:rgb(66,65,65);
+    --logo-blue-color:rgb(102,102,244);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Nunito, serif;
+}
+
+/**LEFT HAND SIDE*/
+
+.register-section {
+    font-family: Nunito;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    border: 1px solid coral;   
+}
+
+
+.register-logo {
+    height: 60px;
+    width: 60px;
+    background-color: var(--logo-blue-color);
+    border-radius: 100%;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.small-register-logo {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #fff;
+    right: 20%;
+    top: 18%;
+    border-radius: 100%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.title .header-h1 {
+    font-size: 30px;
+}
+.title .header-text {
+    color: var(--mid-font-color);
+}
+
+.title .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title .btn img {
+    width: 25px;
+}
+
+.left-register-div {
+    width: 40vw;
+    overflow: scroll;
+}
+
+.left-reg-div-sec {
+    min-height: 120vh;
+    border: 1px solid lightslategray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 60px;
+}
+
+.div-option {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--light-font-color);
+}
+
+.vl {
+    border: 1px solid var(--border-color);
+    width: 100%;
+    height: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 20px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.transparent-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+}
+
+.opaque-btn {
+    background-color: var(--logo-blue-color);
+    color: white;
+    font-weight: bold;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all .5s ease-in-out;
+}
+
+.register-form label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    transition: all .8s ease-out;
+    color: var(--mid-font-color);
+}
+
+.register-form input {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid var(--border-color);
+    transition: all .8s ease-out;
+}
+
+.register-form .input-error {
+    border-color : red;
+}
+
+.register-form .input-valid {
+    border-color: limegreen;
+}
+
+.sign-in-link {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.btn-disabled {
+    background-color: var(--disabled-color);
+    border: 1px solid rgb(221, 221, 223);
+    pointer-events: none;
+}
+
+.error-text, .remove-error {
+    opacity: 1;
+    width: 100%;
+    color: red;
+    font-size: 12px;
+    text-align: right;
+    transition: all .8s ease-out;
+
+}
+
+.remove-error {
+    opacity: 0;
+}
+
+/**RIGHT HAND SIDE*/
+
+/**RIGHT HAND SIDE*/
+.right-register-div {
+    flex: 3;
+    height: 100vh;   
+    padding: 40px;
+    overflow: hidden;
+   background-color:var( --light-font-color);
+}
+.register-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 20px;
+    color: white;
+}
+.quote-owner-details{
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+    color: white; 
+    margin-bottom: 40px;
+    /* background-color: var( --light-font-color); */}
+.right-div-design{
+    height: 73vh; 
+    overflow: hidden;
+    width: 109%}
+.rectangle-1{
+    height: 106%;
+    padding: 13px;
+    padding-right:0 ;
+    background-color:white;
+    border-radius: 20px;
+}
+.rectangle-2{
+    background-color: #b6daff;
+    width: 100%;
+    padding: 15PX;
+    height: 100%;
+    padding-right: 0%;
+}
+@media (max-width:846px) {
+    .register-section{
+        display: block;
+        /* flex-direction: column; */        /* align-items: center; */        padding: 50px;
+        width:100vw;
+        min-height: 100vh;
+    }
+    .left-register-div{
+        width: 100%;
+        margin: auto;
+    }
+    .right-register-div {
+        margin-top: 40px;
+    }
+}
