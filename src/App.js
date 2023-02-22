@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Register from './component/Register/Register';
 
 function App() {
   return (
     <div className="App">
-      <Register body={"Body"}/>
+      <Routes>
+        <Route path="" element={ <Register /> } />
+      </Routes>
     </div>
   );
 }
