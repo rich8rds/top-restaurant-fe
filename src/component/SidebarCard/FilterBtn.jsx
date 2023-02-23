@@ -1,5 +1,3 @@
-import React from 'react'
-
 const FilterBtn = ({ name, icon, isSelected }) => {
   return (
     <button id="selected-btn" 

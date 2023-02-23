@@ -1,6 +1,7 @@
-import './homepage.css'
 import Sidebar from '../../component/SidebarCard/Sidebar'
-import HomeCenter from '../../component/Shop/HomeCenter'
+import HomeCenter from '../../component/HomecenterCard/HomeCenter'
+import './homepage.css'
+import CartView from '../../component/Cart/CartView'
 
 const Homepage = () => {
   return (
@@ -9,6 +10,7 @@ const Homepage = () => {
         <div className="homecenter">
             <HomeCenter />
         </div>
+        <CartView />
     </section>
   )
 }

@@ -1,31 +1,56 @@
 .food-icon-top-div {
-    border: 1px solid lightcoral;
-    width: 230px;
-    height: 280px;
-    margin-top: 80px;
+    border: 1px solid var(--main-border-color);
     background: var(--white-bg);
     border-radius: 20px;
-    padding: 4px;
+    padding: 20px 10px;
 }
 
 .inner-food-div {
     height: 100%;
     display: flex;
+    gap: 15px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
 .food-icon {
-    /* font-size: 200px; */
-    width: 200px;
-    margin-top: -50px;
+    height: 40%;
+    width: 100%;
     color: var(--text-color-bold);
 }
 
 .food-icon img {
     background: none;
     width: 100%;
+    height: 100%;
+}
+
+.food-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.food-title .rating-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rating-icon {
+    color: var(--gold-star-color);
+}
+
+.food-title p {
+    color: var(--icon-light-color);
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .food-description {
@@ -52,4 +77,30 @@
 
 .food-price {
     color: var(--text-color-bold);
+}
+
+.div-heart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.heart-icon {
+    color: red;
+}
+
+.heart-btn .heart-icon {
+    transition: all .4s ease-in-out;
+}
+
+.heart-btn .heart-icon:hover {
+    transform: scale(1.4);
+}
+
+.btn {
+    border: 1px solid var(--main-border-color);
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
 }

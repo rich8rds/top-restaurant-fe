@@ -7,8 +7,6 @@
     flex-direction: column;
     gap: 40px;
     overflow-y: scroll;
-    /* overflow-x: none; */
-
 }
 
 .div {
@@ -51,11 +49,32 @@
     font-size: 18px;
 }
 
-.food-filter-div {
+.food-filter-outer {
     width: 100%;
+    /* width: 100%; */
+}
+
+
+
+.food-filter-div {
+    overflow: scroll;
+    /* width: 100%; */
     display: flex;
     gap: 2vw;
 }
+
+.food-filter-div::-webkit-scrollbar-track,
+ .food-filter-div::-webkit-scrollbar-thumb {
+    background: white;
+    display: none;
+    border: 1px solid white;
+    display: none;
+}
+
+.food-filter-div::-webkit-scrollbar {
+    width: 0px;
+}
+
 
 .food-filter-btn {
     font-size: 14px;
@@ -71,13 +90,19 @@
     background: var(--bg-color-inactive);
 }
 
+.btn {
+    transition: all .4s ease-out;
+    color: var(--text-color-inactive);
+    background: var(--bg-color-inactive); 
+}
+
 .selected-btn {
     font-weight: bold;
     color: var(--text-color-bold);
     background: var(--btn-selected-bg);
 }
 
-.food-filter-btn:hover {
+.btn:hover {
     background-color: gray;
     color: var(--text-color-bold);
 }
@@ -86,11 +111,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 25px;
 }
 
 .product-item-view {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 240px));
-    gap: 30px;
+    gap: 32px;
     place-items: center;
 }

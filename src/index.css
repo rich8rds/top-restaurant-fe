@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
 :root{
     /* --dark-blue-color:  rgb(244, 122, 157); */
     --dark-blue-color:  rgba(54, 5, 19, 0.8);
@@ -16,22 +18,25 @@
 
   /*CUSTOMER LINK VIEW */
 :root {
+  --main-border-color: rgb(238, 239, 241);
   --text-color-bold: rgb(238, 137, 84);
   --text-color-bg-light: rgb(254, 240, 225);
   --text-color-inactive: rgb(151, 151, 151);
   --bg-color-inactive: rgb(235, 235, 235);
   --icon-color: rgb(127, 127, 127);
+  --icon-light-color: rgb(179, 174, 174);
   --icon-selected: rgb(236, 121, 5);
   --btn-selected-bg: rgb(254, 240, 225);
   --white-bg: #fff;
-  --simple-text-color: rgb(80, 80, 80);
+  --simple-text-color: rgb(53, 52, 52);
+  --gold-star-color: rgb(249, 164, 28);
 }
 
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
-  font-family: 'Inter';
+  font-family: Nunito, 'Inter';
 }
 
 body {
@@ -49,5 +54,6 @@ code {
 }
 
 p, h1, h2, h3, button, input, h4, h5, h6, a, body {
-  font-family: 'Inter', serif;
+  font-family: Nunito, 'Inter', serif;
+  letter-spacing: 0.5px;
 }
