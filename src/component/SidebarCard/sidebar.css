@@ -1,0 +1,70 @@
+.sidebar {
+    width: 8vw;
+    padding: 20px;
+    border: 1px solid lightblue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--white-bg);
+}
+.main-icons-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.sidebar-btn {
+    height: 50px;
+    width: 50px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: var(--icon-color);
+}
+
+.sidebar-item {
+    transition: all .4s ease-out;
+}
+
+.sidebar-item:hover {
+    background-color: rgb(254, 248, 242, 0.8);
+    color: var(--text-color-bold);
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.no-bg {
+    background-color: var(--btn-selected-bg);
+    background-color: rgb(254, 248, 242);
+    color: var(--text-color-bold) ;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.selected-sidebar-item {
+    background-color: rgb(254, 248, 242, 0.8);
+    color: var(--text-color-bold);
+    padding: 5px;
+    border-radius: 15px;
+
+}
+
+/* SIDEBAR ITEM */
+
+
+.icon {
+    font-size: 20px;
+    width: 100%;
+    color: var(--icon-color);
+}
+.icon-text {
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    color: var(--icon-color);
+    margin-top: -10px;
+    padding-bottom: 2px;
+}

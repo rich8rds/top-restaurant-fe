@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    /* --dark-blue-color:  rgb(244, 122, 157); */
+    --dark-blue-color:  rgba(54, 5, 19, 0.8);
+    --light-blue-color: #BCDCFF;
+    --milk-white: #BCDCFF;
+    --black-color: black;
+    --lightgray-color: #D4D4D4;
+    --neutral-color: #404040;
+    --white-color:  white;
+    --transparent-color: rgb(249, 169, 191);
+    --light-gold-color: rgb(240, 199, 120);
+    --shop-main-bg-color: rgb(250, 250, 250);
+    
+  }
+
+  /*CUSTOMER LINK VIEW */
+:root {
+  --text-color-bold: rgb(238, 137, 84);
+  --text-color-bg-light: rgb(254, 240, 225);
+  --text-color-inactive: rgb(151, 151, 151);
+  --bg-color-inactive: rgb(235, 235, 235);
+  --icon-color: rgb(127, 127, 127);
+  --icon-selected: rgb(236, 121, 5);
+  --btn-selected-bg: rgb(254, 240, 225);
+  --white-bg: #fff;
+  --simple-text-color: rgb(80, 80, 80);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +46,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p, h1, h2, h3, button, input, h4, h5, h6, a, body {
+  font-family: 'Inter', serif;
 }
