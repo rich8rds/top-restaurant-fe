@@ -38,4 +38,4 @@ const reducer = (state, action) => {
 } 
 
 
-export { reducer, field}
+export { reducer, field }

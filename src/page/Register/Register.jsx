@@ -2,29 +2,26 @@ import './register.css';
 import React, { useState} from "react";
 import { apiPost } from '../../api/axios';
 import { ToastContainer } from 'react-toastify';
-import { notifyError, notifyWarning } from '../../notification/Toastify';
+import { notifyError, notifySuccess, notifyWarning } from '../../notification/Toastify';
 import LoadingSpin from "react-loading-spin";
 import { WiStars } from 'react-icons/wi'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const loginState = {
     firstName: '',
     lastName:'',
-    otherName:'',
     email: '',
     phoneNumber: '',
     password: '',
 
     isFirstNameValid: false,
     isLastNameValid:false,
-    isOtherNameValid:false,
     isEmailValid: false,
     isPhoneNumberValid: false,
     isPasswordValid: false,
 
     isFirstNameEmpty: true,
     isLastNameEmpty:true,
-    isOtherNameEmpty:true,
     isEmailEmpty:true,
     isPhoneNumberEmpty: true,
     isPasswordEmpty:true
@@ -34,7 +31,7 @@ const Register =()=> {
     const[regFormData, setRegFormData] = useState(loginState)
     const[isLoading, setIsLoading] = useState(false)
     const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleRegFormData = (e, type) => {
     const value = e.target.value
@@ -51,11 +48,6 @@ const Register =()=> {
                     return setRegFormData({ ...regFormData, lastName: value, isLastNameValid: true, isLastNameEmpty: false })
                 return setRegFormData({ ...regFormData, lastName: value, isLastNameValid: false, isLastNameEmpty: false })
 
-         case "otherName":
-                    if(value.length === 0) return setRegFormData({ ...regFormData, otherName: value, isOtherNameValid: true, isOtherNameEmpty: true })
-                    if(value.length > 1)
-                        return setRegFormData({ ...regFormData, otherName: value,isOtherNameValid: true, isOtherNameEmpty: false })
-                    return setRegFormData({ ...regFormData, otherName: value, isOtherNameValid: false, isOtherNameEmpty: false })
         case "email":
             if(value.length === 0)return setRegFormData({...regFormData, email: value ,isEmailValid:true,isEmailEmpty:true})
             if(value.match(regex))
@@ -79,17 +71,15 @@ const Register =()=> {
  }
 
     const { 
-        firstName , lastName, otherName, email, phoneNumber,
+        firstName , lastName, email, phoneNumber,
         password, isEmailEmpty, isEmailValid, isPhoneNumberEmpty, 
         isPhoneNumberValid,isPasswordEmpty,isPasswordValid,isFirstNameValid,
-        isFirstNameEmpty,isLastNameEmpty,isLastNameValid,isOtherNameEmpty,
-        isOtherNameValid 
+        isFirstNameEmpty,isLastNameEmpty,isLastNameValid,
     } = regFormData
 
 
     const allFieldsValid = isFirstNameValid && !isFirstNameEmpty 
                         && isLastNameValid && !isLastNameEmpty 
-                        && isOtherNameValid && !isOtherNameEmpty 
                         && isEmailValid && !isEmailEmpty 
                         && isPhoneNumberValid && !isPhoneNumberEmpty 
                         && isPasswordValid && !isPasswordEmpty
@@ -100,7 +90,6 @@ const Register =()=> {
     apiPost("auth/register", {
         firstName: firstName,
         lastName: lastName,
-        otherName: otherName,
         email: email,
         phoneNumber: phoneNumber,
         password: password,
@@ -108,14 +97,16 @@ const Register =()=> {
     .then(res => {
         console.log(res)
         const data = res.data
-        setRegFormData(loginState)
+        // setRegFormData(loginState)
         setIsLoading(false)
+
         if(res.data.code === -1) notifyWarning(data.description)
-        else navigate("/welcome", { state: firstName });
+        notifySuccess("Successful: \n" + data.description)
+        // else navigate("/welcome", { state: firstName });
     })
     .catch(err => {
         console.log(err)
-        setRegFormData(loginState)
+        // setRegFormData(loginState)
         setIsLoading(false)
         notifyError("Internal Server Error. Registration Failed!")
     })
@@ -154,13 +145,6 @@ const Register =()=> {
                     className={ isLastNameEmpty ? "register-input" : isLastNameValid ? "register-input input-valid" : "register-input input-error"} 
                     placeholder="Doe" />
                     { isLastNameValid || (!isLastNameEmpty && <p className="register-sentence">Only names above two characters are required</p>)}
-            </label>
-            <label htmlFor ="otherName"className="register-form">Other Name 
-                <input type ="text" value = {otherName} onChange={(e)=> handleRegFormData(e, "otherName")} 
-                    name="full name" 
-                    className={ isOtherNameEmpty ? "register-input" : isOtherNameValid ? "register-input input-valid" : "register-input input-error"} 
-                    placeholder="Bukunmi" />
-                    { isOtherNameValid || (!isOtherNameEmpty && <p className="register-sentence">Only names above two characters are required</p>)}
             </label>
             <label htmlFor ="email " className="register-form">Email 
                 <input type ="text" value={email} onChange={(e)=> handleRegFormData(e, "email")} 
