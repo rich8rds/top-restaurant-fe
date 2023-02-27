@@ -194,16 +194,9 @@
     }
   }
 }
-
-
-.top-div {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    width: 80%;
-}
-
-.search-div {
+  
+  .search-div {
+  border: 1px solid var(--main-border-color);
     width: 20vw;
     background-color: var(--white-bg);
     height: 45px;

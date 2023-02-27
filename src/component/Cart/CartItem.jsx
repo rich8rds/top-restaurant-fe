@@ -1,4 +1,4 @@
-import { FaMinus, FaPlus, FaRemoveFormat } from 'react-icons/fa'
+import { FaMinus, FaPlus } from 'react-icons/fa'
 import { MdOutlineDeleteForever } from 'react-icons/md'
 import './cartitem.css'
 

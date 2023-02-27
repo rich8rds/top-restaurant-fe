@@ -81,7 +81,7 @@ const Login =()=> {
                 </div>
  
                 <div className="title">
-                    <h1 className='heading'>Sign I n</h1>
+                    <h1 className='heading'>Sign In</h1>
                     <p>Create an account to enjoy our benefits <span id="icon-wistars"><WiStars/> </span></p>
                     <button className="transparent-btn btn-signup">
                         <img src ='https://www.shareicon.net/data/2016/07/10/119930_google_512x512.png' 
