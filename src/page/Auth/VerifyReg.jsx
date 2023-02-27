@@ -10,7 +10,7 @@ import { ArrowLeftOutlined,
 import { useAuth } from '../../hooks/useAuth';
 
 
-// import '../../styles/authpassword.scss';
+import './authpassword.scss';
 
 
 const VerifyReg = () => {
@@ -20,13 +20,13 @@ const VerifyReg = () => {
     const{ isLoading, verifyMessage, VerifyNewUser, ResendVerificationMail } = useAuth()
 
   useEffect(() => {
-    const verificationUrl = `/auth/verify-registration?${queryParams}`
+    const verificationUrl = `auth/verify-registration?${queryParams}`
     VerifyNewUser(verificationUrl)
   }, [queryParams, VerifyNewUser])
 
-  const resendVerificationMail = () => {
-    const newTokenUrl = `/auth/resend-verification-token?${queryParams}`
-    ResendVerificationMail(newTokenUrl)
+  const resendVerificationMail = (e) => {
+    const newTokenUrl = `auth/resend-verification-token?${queryParams}`
+    ResendVerificationMail(e, newTokenUrl)
   }
 
 
@@ -41,7 +41,7 @@ const VerifyReg = () => {
                     <div className="icon" onClick={goBack}> <ArrowLeftOutlined /></div>
                     <h2>Verify Registration</h2>
                     {
-                        verifyMessage === 'Success' ? 
+                        verifyMessage === 'Email Verified' ? 
                         <div className="response">
                             <CheckCircleOutlined style={{ fontSize: "200px", color: "#7b3aed"}} id="check-icon" />
                             <p>Token Verified!</p>  

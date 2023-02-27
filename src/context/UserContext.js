@@ -1,5 +1,5 @@
 import { message } from 'antd';
-import { createContext, useState } from "react";
+import { createContext, useCallback, useState } from "react";
 import { apiGet } from "../api/axios";
 import { notification } from '../notification/message';
 
@@ -12,16 +12,17 @@ export const AuthProvider = ({ children }) => {
     const[verifyMessage, setVerifyMessage] = useState([])
     const[messageApi, contextHolder] = message.useMessage()
 
-    const VerifyNewUser = async(verificationUrl) => {
-        await apiGet((verificationUrl))
+    const VerifyNewUser = useCallback((verificationUrl) => {
+         apiGet((verificationUrl))
         .then(res => {
-            console.log(res.data)
-            setVerifyMessage(res.data)
+            const message = res.data.description
+            notification(messageApi,'success', message)
+            setVerifyMessage(message)
         }).catch(err => {
-            console.log(err)
+            notification(messageApi, 'error', err.response.data.description)
             setIsLoading(false)
         })
-    }
+    }, [messageApi])
 
     const ResendVerificationMail = (e, newTokenUrl) => {
         e.preventDefault()
@@ -30,7 +31,7 @@ export const AuthProvider = ({ children }) => {
         .then(res => {
             console.log(res.data)
             setIsLoading(false)
-            notification(messageApi,'success', res.data.description)
+            notification(messageApi,'success', "Link sent. Access your mail to get verified!")
         })
         .catch(err => {
             console.log(err)
@@ -42,13 +43,15 @@ export const AuthProvider = ({ children }) => {
 
     return(
         <AuthContext.Provider value={{ 
-            loginData, setLogiData,
-            signupData, setSignupData,
-            isLoading, setIsLoading,
-            VerifyNewUser, ResendVerificationMail,
+            loginData, 
+            setLogiData,
+            signupData, 
+            setSignupData,
+            isLoading, 
+            setIsLoading,
+            VerifyNewUser, 
+            ResendVerificationMail,
             verifyMessage,
-
-
         }}>
         { children }
         { contextHolder }

@@ -6,6 +6,7 @@ import { notifyError, notifySuccess, notifyWarning } from '../../notification/To
 import LoadingSpin from "react-loading-spin";
 import { WiStars } from 'react-icons/wi'
 import { Link } from 'react-router-dom';
+import { regex } from '../../util/Util';
 
 const loginState = {
     firstName: '',
@@ -30,9 +31,6 @@ const loginState = {
 const Register =()=> {
     const[regFormData, setRegFormData] = useState(loginState)
     const[isLoading, setIsLoading] = useState(false)
-    const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
-    // const navigate = useNavigate();
-
     const handleRegFormData = (e, type) => {
     const value = e.target.value
     switch(type) {
@@ -97,18 +95,18 @@ const Register =()=> {
     .then(res => {
         console.log(res)
         const data = res.data
-        // setRegFormData(loginState)
+        setRegFormData(loginState)
         setIsLoading(false)
 
         if(res.data.code === -1) notifyWarning(data.description)
         notifySuccess("Successful: \n" + data.description)
-        // else navigate("/welcome", { state: firstName });
     })
     .catch(err => {
+        const error = err.response.data
         console.log(err)
-        // setRegFormData(loginState)
+        setRegFormData(loginState)
         setIsLoading(false)
-        notifyError("Internal Server Error. Registration Failed!")
+        notifyError(error.description)
     })
  }
     

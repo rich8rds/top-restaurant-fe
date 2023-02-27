@@ -16,9 +16,9 @@ function App() {
           {/* <Route index element={ <Landingpage /> } />  */}
         </Route>
 
-          <Route path="/signup" element={ <Register /> } />
-          <Route path="/login" element={ <Login /> } />
-          <Route path="/verify" element={ <VerifyReg /> } />
+          <Route path="/auth/signup" element={ <Register /> } />
+          <Route path="/auth/login" element={ <Login /> } />
+          <Route path="/auth/verify" element={ <VerifyReg /> } />
           <Route path="/*" element={ <Page404 /> } />
       </Routes>
     </div>
