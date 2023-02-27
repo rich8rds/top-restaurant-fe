@@ -4,6 +4,7 @@ import Shop from './page/Shop/Shop';
 import Login from './page/Login/Login';
 import Register from './page/Register/Register';
 import SharedLayout from './page/UtilPage/SharedLayout'
+import Page404 from './page/UtilPage/Page404';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
           <Route path="/signup" element={ <Register /> } />
           <Route path="/login" element={ <Login /> } />
+          <Route path="/*" element={ <Page404 /> } />
       </Routes>
     </div>
   );
