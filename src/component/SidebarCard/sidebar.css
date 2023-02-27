@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--white-bg);
+
+    box-shadow: 9px 4px 9px -6px rgba(189,174,174,0.78);
 }
 .main-icons-div {
     display: flex;

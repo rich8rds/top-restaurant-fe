@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
 :root{
-    /* --dark-blue-color:  rgb(244, 122, 157); */
     --dark-blue-color:  rgba(54, 5, 19, 0.8);
     --light-blue-color: #BCDCFF;
     --milk-white: #BCDCFF;
@@ -56,4 +55,13 @@ code {
 p, h1, h2, h3, button, input, h4, h5, h6, a, body {
   font-family: Nunito, 'Inter', serif;
   letter-spacing: 0.5px;
+}
+
+p {
+  color: var(--text-color-inactive);
+}
+
+
+.cartview-section, .sidebar, .homecenter {
+  margin-top: 9vh;
 }

@@ -13,42 +13,6 @@
     width: 60vw;
 }
 
-.top-div {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    width: 80%;
-}
-
-.search-div {
-    width: 28vw;
-    background-color: var(--white-bg);
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.search-div input {
-    height: 40px;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: var(--white-bg);
-}
-
-.search-div .search-icon {
-    font-size: 20px;
-}
-
-.top-div p {
-    color: var(--text-color-bold);
-    font-weight: bold;
-    font-size: 18px;
-}
-
 .food-filter-outer {
     width: 100%;
     /* width: 100%; */

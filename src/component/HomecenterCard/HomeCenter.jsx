@@ -1,18 +1,12 @@
 import './homecenter.css'
-import { FaDribbble, FaHamburger, FaPalette, FaPizzaSlice, FaSearch, FaSnapchat } from 'react-icons/fa'
+import { FaDribbble, FaHamburger, FaPalette, FaPizzaSlice, FaSnapchat } from 'react-icons/fa'
 import FilterBtn from '../SidebarCard/FilterBtn'
 import ProductItem from '../ProductCard/ProductItem'
 
 const HomeCenter = () => {
   return (
     <section className="home-center-display">
-        <div className="top-div">
-            <div className="search-div">
-                <input type='text' placeholder='Search category or menu'/>
-                <FaSearch className='search-icon'/>
-            </div>
-            <p>5 items out of stock </p>
-        </div>
+
 
         <div className='food-filter-outer'>
             <div className="food-filter-div">

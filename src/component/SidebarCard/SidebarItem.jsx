@@ -1,6 +1,3 @@
-import { useState } from 'react'
-
-
 const SidebarItem = ({ icon, name, bg }) => {
 
   return (

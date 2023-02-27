@@ -1,9 +1,9 @@
 import Sidebar from '../../component/SidebarCard/Sidebar'
 import HomeCenter from '../../component/HomecenterCard/HomeCenter'
-import './homepage.css'
+import './shop.css'
 import CartView from '../../component/Cart/CartView'
 
-const Homepage = () => {
+const Shop = () => {
   return (
     <section className="homepage-section">
         <Sidebar />
@@ -15,4 +15,4 @@ const Homepage = () => {
   )
 }
 
-export default Homepage
+export default Shop
