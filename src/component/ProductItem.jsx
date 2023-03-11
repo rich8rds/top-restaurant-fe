@@ -1,4 +1,4 @@
-import './productitem.css'
+import '../styles/productitem.css'
 import { FaStar } from 'react-icons/fa'
 import { AiOutlineHeart } from 'react-icons/ai'
 

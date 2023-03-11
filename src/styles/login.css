@@ -43,6 +43,16 @@
     scrollbar-width: none;
 }
 
+.register-form .label-pass {
+    position: relative;
+}
+.fpass-link {
+    position: absolute;
+    font-size: 12px;
+    left: 80%;
+    /* text-decoration: none; */
+    color: var(--dark-blue-color);
+}
 .div-option {
     display: flex;
     align-items: center;

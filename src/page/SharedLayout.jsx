@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import Navbar from '../../component/NavbarCard/Navbar'
+import Navbar from '../component/Navbar'
 
 const SharedLayout = () => {
   const handleShowNav = () =>  console.log("first")

@@ -1,4 +1,4 @@
-import { antIcon } from '../../util/Util'
+import { antIcon } from '../util/Util'
 import { useEffect, } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -7,10 +7,10 @@ import { ArrowLeftOutlined,
         CheckCircleOutlined,
         CloseCircleOutlined
 } from '@ant-design/icons'
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../hooks/useAuth';
 
 
-import './authpassword.scss';
+import '../styles/authpassword.scss';
 
 
 const VerifyReg = () => {
@@ -46,8 +46,8 @@ const VerifyReg = () => {
                             <CheckCircleOutlined style={{ fontSize: "200px", color: "#7b3aed"}} id="check-icon" />
                             <p>Token Verified!</p>  
                                 { isLoading ?  <Spin indicator={antIcon} /> : 
-                                    <Link to="/auth/signin" className="btn btn-large link">Click to Login</Link>
-                                 }
+                                    <Link to="/auth/login" className="btn btn-large">Click to Login</Link>
+                                }
                         </div>
                             : 
                         <div className="response">

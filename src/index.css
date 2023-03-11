@@ -64,4 +64,9 @@ p {
 
 .cartview-section, .sidebar, .homecenter {
   margin-top: 9vh;
+  height: 80vh;
+}
+
+.btn-large {
+  height:  60px;
 }

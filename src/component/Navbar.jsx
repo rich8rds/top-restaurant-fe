@@ -1,4 +1,4 @@
-import './navbar.scss'
+import '../styles/navbar.scss'
 import { FaCartPlus, FaHamburger, FaSearch } from 'react-icons/fa'
 
 const Navbar = () => {

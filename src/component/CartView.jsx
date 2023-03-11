@@ -1,5 +1,5 @@
 import CartItem from './CartItem'
-import './cartview.css'
+import '../styles/cartview.css'
 
 const CartView = () => {
   return (

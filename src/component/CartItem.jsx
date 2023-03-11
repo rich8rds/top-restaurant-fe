@@ -1,6 +1,6 @@
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import { MdOutlineDeleteForever } from 'react-icons/md'
-import './cartitem.css'
+import '../styles/cartitem.css'
 
 const imageUrl = 'https://www.slicepizzeria.com/wp-content/uploads/2020/12/Hand-Tossed-Crust-Classic-Crust-768x725.jpg'
 const text = 'Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores iure saepe quibusdam vel non ullam tenetur nesciunt, accusamus debitis?'

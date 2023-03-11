@@ -1,8 +1,8 @@
-import './login.css';
+import '../styles/login.css';
 import React, { useState} from "react";
-import { apiPost } from '../../api/axios';
+import { apiPost } from '../api/axios';
 import { ToastContainer } from 'react-toastify';
-import { notifyError, notifyWarning } from '../../notification/Toastify';
+import { notifyError, notifyWarning } from '../notification/Toastify';
 import LoadingSpin from "react-loading-spin";
 import { WiStars } from 'react-icons/wi'
 import { Link, } from 'react-router-dom';
@@ -19,6 +19,7 @@ const loginState = {
  }
 
 const Login =()=> {
+    const signupLink = "/auth/signup"
     const[regFormData, setRegFormData] = useState(loginState)
     const[isLoading, setIsLoading] = useState(false)
     // const navigate = useNavigate();
@@ -93,16 +94,15 @@ const Login =()=> {
             <form action = "post"  className="register-form" onSubmit={handleClick} > 
             
             <label htmlFor ="email " className="register-form">Email 
-                <input type ="text" value={email} onChange={(e)=> handleLoginData
-        (e, "email")} 
+                <input type ="text" value={email} onChange={(e)=> handleLoginData(e, "email")} 
                     name="email" 
                     className={ isEmailEmpty ? "register-input" : isEmailValid ? "register-input input-valid" : "register-input input-error"} 
                     placeholder="Name@example.com" />
                    { isEmailValid || (!isEmailEmpty && <p className="register-sentence">Email does not match the required format</p>)}
             </label>
-            <label htmlFor ="password " className="register-form">Password
-                <input type ="text" value={password} onChange={(e)=> handleLoginData
-        (e, "password")}
+            <label htmlFor ="password " className="register-form label-pass">Password
+            <Link to={"/auth/forgot-password"} className="fpass-link">Forgot Password?</Link>
+                <input type ="text" value={password} onChange={(e)=> handleLoginData(e, "password")}
                     name="password" 
                     className={isPasswordEmpty ? "register-input" : isPasswordValid? "register-input input-valid" : "register-input input-error"} 
                     placeholder="password123@" />
@@ -113,7 +113,7 @@ const Login =()=> {
             </button>
             </form>
             <div className="sign-in-link">
-                <p>Not Already a member? <Link to="/signup">Sign Up</Link></p>
+                <p>Not Already a member? <Link to={signupLink}>Sign Up</Link></p>
 
             </div>
             </div>

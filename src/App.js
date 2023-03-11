@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Shop from './page/Shop/Shop';
-import Login from './page/Login/Login';
-import Register from './page/Register/Register';
-import SharedLayout from './page/UtilPage/SharedLayout'
-import Page404 from './page/UtilPage/Page404';
-import VerifyReg from './page/Auth/VerifyReg';
+import Shop from './page/Shop';
+import Login from './page/Login';
+import Register from './page/Register';
+import SharedLayout from './page/SharedLayout'
+import Page404 from './page/Page404';
+import VerifyReg from './page/VerifyReg';
+import ChangePassword from './page/ChangePassword';
 
 function App() {
   return (
@@ -16,10 +17,13 @@ function App() {
           {/* <Route index element={ <Landingpage /> } />  */}
         </Route>
 
+        <Route path="/auth">
           <Route path="/auth/signup" element={ <Register /> } />
           <Route path="/auth/login" element={ <Login /> } />
           <Route path="/auth/verify" element={ <VerifyReg /> } />
-          <Route path="/*" element={ <Page404 /> } />
+          <Route path="/auth/forgot-password" element={ <ChangePassword /> } />
+        </Route>
+        <Route path="/*" element={ <Page404 /> } />
       </Routes>
     </div>
   );

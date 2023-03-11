@@ -1,7 +1,7 @@
-import './homecenter.css'
+import '../styles/homecenter.css'
 import { FaDribbble, FaHamburger, FaPalette, FaPizzaSlice, FaSnapchat } from 'react-icons/fa'
-import FilterBtn from '../SidebarCard/FilterBtn'
-import ProductItem from '../ProductCard/ProductItem'
+import FilterBtn from './FilterBtn'
+import ProductItem from './ProductItem'
 
 const HomeCenter = () => {
   return (

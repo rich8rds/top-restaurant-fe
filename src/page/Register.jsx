@@ -1,12 +1,12 @@
-import './register.css';
+import '../styles/register.css';
 import React, { useState} from "react";
-import { apiPost } from '../../api/axios';
+import { apiPost } from '../api/axios';
 import { ToastContainer } from 'react-toastify';
-import { notifyError, notifySuccess, notifyWarning } from '../../notification/Toastify';
+import { notifyError, notifySuccess, notifyWarning } from '../notification/Toastify';
 import LoadingSpin from "react-loading-spin";
 import { WiStars } from 'react-icons/wi'
 import { Link } from 'react-router-dom';
-import { regex } from '../../util/Util';
+import { regex } from '../util/Util';
 
 const loginState = {
     firstName: '',
@@ -29,6 +29,7 @@ const loginState = {
  }
 
 const Register =()=> {
+    const loginLink = "/auth/login"
     const[regFormData, setRegFormData] = useState(loginState)
     const[isLoading, setIsLoading] = useState(false)
     const handleRegFormData = (e, type) => {
@@ -171,7 +172,7 @@ const Register =()=> {
             </button>
             </form>
             <div className="sign-in-link">
-                <p>Already a member? <Link to="/login">Sign In</Link></p>
+                <p>Already a member? <Link to={loginLink}>Sign In</Link></p>
 
             </div>
             </div>

@@ -1,7 +1,7 @@
-import Sidebar from '../../component/SidebarCard/Sidebar'
-import HomeCenter from '../../component/HomecenterCard/HomeCenter'
-import './shop.css'
-import CartView from '../../component/Cart/CartView'
+import Sidebar from '../component/Sidebar'
+import HomeCenter from '../component/HomeCenter'
+import '../styles/shop.css'
+import CartView from '../component/CartView'
 
 const Shop = () => {
   return (

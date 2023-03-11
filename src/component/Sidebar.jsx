@@ -1,4 +1,4 @@
-import './sidebar.css'
+import '../styles/sidebar.css'
 import SidebarItem from "./SidebarItem"
 
 import { FaCartPlus, FaClock, FaHamburger, FaHome, FaSignOutAlt, FaTable } from 'react-icons/fa'

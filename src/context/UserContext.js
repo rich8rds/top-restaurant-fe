@@ -1,7 +1,8 @@
 import { message } from 'antd';
-import { createContext, useCallback, useState } from "react";
-import { apiGet } from "../api/axios";
+import { createContext, useCallback, useReducer, useState } from "react";
+import { apiGet, apiPost } from "../api/axios";
 import { notification } from '../notification/message';
+import { reducer, field } from '../reducer/changePasswordReducer'
 
 export const AuthContext = createContext()
 
@@ -11,6 +12,9 @@ export const AuthProvider = ({ children }) => {
     const[isLoading, setIsLoading] = useState(false)
     const[verifyMessage, setVerifyMessage] = useState([])
     const[messageApi, contextHolder] = message.useMessage()
+
+    const[, dispatch] = useReducer(reducer, field)
+    const[tokenValid, setTokenValid] = useState(false)
 
     const VerifyNewUser = useCallback((verificationUrl) => {
          apiGet((verificationUrl))
@@ -41,6 +45,60 @@ export const AuthProvider = ({ children }) => {
     }
 
 
+    // const UpdatePassword = () => {
+
+    // }
+
+    const ForgotPassword = useCallback((verifyPasswordTokenUrl) => {
+        setIsLoading(true)
+        apiGet(verifyPasswordTokenUrl)
+        .then(res => {
+            console.log(res)
+            setIsLoading(false)
+            const message = res.data.description
+            notification(messageApi,'success', message) 
+            setTokenValid(true)
+        })
+        .catch(err => {
+            setIsLoading(false)
+            console.log(err)
+            let errMsg =  err.response.data.errorMessage
+            if(errMsg === undefined)
+                notification('error', "This link has expired!")
+            else notification('error', errMsg)
+            setTokenValid(false)
+        })
+
+        return () => {}
+    }, [messageApi])
+
+    const ChangePassword = (changePasswordUrl, formData) => {
+        apiPost(changePasswordUrl, formData)
+        .then(res => {
+            console.log(res.data)
+            notification('success', res.data.message)
+        })
+        .catch(err => {
+            console.log(err)
+                notification('error', "This link has expired!")
+        })
+
+        dispatch({type: "clear", value: ""})
+    }
+
+    // const ViewProfile = () => {
+
+    // }
+
+    // const EditProfile = () => {
+
+    // }
+
+    // const SocialLogin = () => {
+
+    // }
+
+
     return(
         <AuthContext.Provider value={{ 
             loginData, 
@@ -51,7 +109,11 @@ export const AuthProvider = ({ children }) => {
             setIsLoading,
             VerifyNewUser, 
             ResendVerificationMail,
+            ForgotPassword,
+            ChangePassword,
             verifyMessage,
+            tokenValid,
+
         }}>
         { children }
         { contextHolder }
